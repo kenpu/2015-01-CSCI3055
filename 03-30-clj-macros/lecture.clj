@@ -1,4 +1,5 @@
 (ns lecture)
+(require 'clojure.pprint)
 
 (defmacro tell
   [form]
@@ -12,5 +13,5 @@
 ; Result = 2
 ;
 
-(macroexpand 
-(tell (doall (for [i (range 10)] i))))
+(clojure.pprint/pprint
+  (macroexpand '(tell (doall (for [i (range 10)] i)))))
